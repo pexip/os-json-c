@@ -1,13 +1,15 @@
 Source: json-c
 Priority: extra
-Maintainer: fabien boucher <fabien.dot.boucher@gmail.com>
-Uploaders: Ondřej Surý <ondrej@debian.org>
+Maintainer: Pexip AS <packaging@pexip.com>
+XSBC-Pexip-Original-Maintainer: fabien boucher <fabien.dot.boucher@gmail.com>
+XSBC-Pexip-Original-Uploaders: Ondřej Surý <ondrej@debian.org>
 Build-Depends: debhelper (>= 9), dh-exec, dh-autoreconf
 Standards-Version: 3.9.3.0
 Section: libs
 Homepage: https://github.com/json-c/json-c/wiki
 Vcs-Git: git://anonscm.debian.org/git/collab-maint/json-c
 Vcs-Browser: http://anonscm.debian.org/?p=collab-maint/json-c.git;a=summary
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ jessie
 
 Package: libjson-c2
 Architecture: any

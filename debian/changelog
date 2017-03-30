@@ -1,3 +1,9 @@
+json-c (0.11-4pexip1) pexip; urgency=low
+
+  * Prepare Pexip packaging
+
+ -- John-Mark Bell <jmb@pexip.com>  Thu, 30 Mar 2017 16:14:17 +0000
+
 json-c (0.11-4) unstable; urgency=low
 
   * Add upstream patch to fix two security vulnerabilitiesa (Closes: #744008)
