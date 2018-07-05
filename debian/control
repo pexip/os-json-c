@@ -9,7 +9,7 @@ Section: libs
 Homepage: https://github.com/json-c/json-c/wiki
 Vcs-Git: git://anonscm.debian.org/git/collab-maint/json-c
 Vcs-Browser: http://anonscm.debian.org/?p=collab-maint/json-c.git;a=summary
-XS-Pexip-Upstream: http://ftp.debian.org/debian/ jessie
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ stretch
 
 Package: libjson-c2
 Architecture: any
