@@ -1,3 +1,58 @@
+json-c (0.12.1-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * debian/control: Fix Vcs-Browser URL
+  * debian/libjson-c-dev.links: Fix library symlinks to not collide between
+    /lib/ and /usr/lib/ (Closes: #843145, LP: #1629552)
+
+ -- Martin Pitt <mpitt@debian.org>  Mon, 14 Nov 2016 11:33:17 +0100
+
+json-c (0.12.1-1) unstable; urgency=medium
+
+  * Imported Upstream version 0.12.1
+  * Rebase patches on top of 0.12.1 release
+  * Workaround the unused variables in tests
+
+ -- Ondřej Surý <ondrej@debian.org>  Fri, 02 Sep 2016 10:28:57 +0200
+
+json-c (0.12-3) unstable; urgency=medium
+
+  * Fix the .so links in the -dev package (Closes: #821768)
+
+ -- Ondřej Surý <ondrej@debian.org>  Tue, 19 Apr 2016 09:44:04 +0200
+
+json-c (0.12-2) unstable; urgency=medium
+
+  * Upload to unstable
+  * wrap-and-sort -a debian/ directory
+
+ -- Ondřej Surý <ondrej@debian.org>  Mon, 18 Apr 2016 21:19:20 +0200
+
+json-c (0.12-1) experimental; urgency=medium
+
+  [ Andreas Beckmann ]
+  * libjson-c-dev: Ship /usr/lib/<triplet>/libjson-c.so.2 symlink that would
+    otherwise become a dangling link (initially created by ldconfig) after
+    package removal.  (Closes: #792177)
+
+  [ Ondřej Surý ]
+  * New upstream version 0.12
+    + [CVE-2013-6371]: hash collision denial of service
+    + [CVE-2013-6370]: buffer overflow if size_t is larger than int
+  * Remove all upstream-merged patches
+  * Add patch to fix variable set but not used [-Werror=unused-but-set-variable]
+  * Update libjson-c2 symbols file
+    + The new upstream release misses two symbols, upload to experimental
+      first if it poses any real problem or not.
+  * Migrate to automatic dbgsym
+  * Add autotools-dev dh addon
+  * Bump standards to 3.9.7 (no change)
+  * Bump SOVERSION as interfaces has been removed from 0.12 release
+  * Library transition from libjson-c2 to libjson-c3 as interfaces has
+    been removed
+
+ -- Ondřej Surý <ondrej@debian.org>  Thu, 17 Apr 2014 10:53:37 +0200
+
 json-c (0.11-4pexip1) pexip; urgency=low
 
   * Prepare Pexip packaging
@@ -6,7 +61,7 @@ json-c (0.11-4pexip1) pexip; urgency=low
 
 json-c (0.11-4) unstable; urgency=low
 
-  * Add upstream patch to fix two security vulnerabilitiesa (Closes: #744008)
+  * Add upstream patch to fix two security vulnerabilities (Closes: #744008)
     + [CVE-2013-6371]: hash collision denial of service
     + [CVE-2013-6370]: buffer overflow if size_t is larger than int
 

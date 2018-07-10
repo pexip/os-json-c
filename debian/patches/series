@@ -1,3 +1,2 @@
-json-c-b3bce4d5.patch
-json-c-94.patch
-0001-Patch-to-address-the-following-issues.patch
+0001-Bump-SOVERSION-as-interfaces-has-been-removed-from-0.patch
+0002-Workaround-the-unused-variables-in-tests.patch

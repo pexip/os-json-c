@@ -20,31 +20,18 @@ override_dh_auto_clean:
 override_dh_auto_install:
 	dh_auto_install
 
-	# we install libjson-c into /lib, so fix the link
-	T=$$(readlink debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libjson-c.so); \
-	rm debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libjson-c.so; \
-	ln -s /lib/$(DEB_HOST_MULTIARCH)/$$(basename $$T) debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libjson-c.so
-
-	# add thin symlink compatibility layer for json.so
-	rm debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libjson.*
-	mkdir -p debian/tmp/lib/$(DEB_HOST_MULTIARCH)
-	ln -s /usr/lib/$(DEB_HOST_MULTIARCH)/libjson-c.so debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libjson.so
-	ln -s /usr/lib/$(DEB_HOST_MULTIARCH)/libjson-c.a debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libjson.a
-	ln -s /lib/$(DEB_HOST_MULTIARCH)/libjson-c.so.2 debian/tmp/lib/$(DEB_HOST_MULTIARCH)/libjson.so.0
-
-	rm debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/pkgconfig/json.pc
-	ln -s json-c.pc debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/pkgconfig/json.pc
+	# we install libjson-c into /lib, so fix the link in a way understood by ldconfig
+	rm debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/libjson-c.so
+	# new links are created by libjson-c-dev.links
 
 override_dh_strip:
-	dh_strip --dbg-package=libjson-c2-dbg
+	dh_strip --dbgsym-migration='libjson-c2-dbg (<< 0.12-3)'
 
 override_dh_installdocs:
-	dh_installdocs -plibjson0-dev --link-doc=libjson-c-dev
-	dh_installdocs -plibjson0 --link-doc=libjson-c2
-	dh_installdocs --remaining-packages -Xjquery.js
+	dh_installdocs -Xjquery.js
 
 override_dh_install:
-	dh_install --fail-missing -Xlibjson.la -Xlibjson-c.la
+	dh_install --fail-missing -Xlibjson-c.la
 
 %:
-	dh  $@ --with autoreconf
+	dh  $@ --with autoreconf --with autotools-dev
