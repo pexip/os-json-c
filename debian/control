@@ -1,16 +1,13 @@
 Source: json-c
-Priority: extra
-Maintainer: fabien boucher <fabien.dot.boucher@gmail.com>
-Uploaders: Ondřej Surý <ondrej@debian.org>
-Build-Depends: autotools-dev,
-               debhelper (>= 9),
-               dh-autoreconf,
-               dh-exec
-Standards-Version: 3.9.7
+Priority: optional
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Build-Depends: debhelper-compat (= 12),
+Rules-Requires-Root: no
+Standards-Version: 4.3.0
 Section: libs
 Homepage: https://github.com/json-c/json-c/wiki
-Vcs-Git: git://anonscm.debian.org/git/collab-maint/json-c
-Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/json-c.git
+Vcs-Git: https://salsa.debian.org/debian/json-c.git
+Vcs-Browser: https://salsa.debian.org/debian/json-c
 
 Package: libjson-c3
 Architecture: any
@@ -40,6 +37,7 @@ Description: JSON manipulation library - development files
 Package: libjson-c-doc
 Section: doc
 Architecture: all
+Multi-Arch: foreign
 Depends: libjs-jquery,
          ${misc:Depends}
 Description: JSON manipulation library - documentation files
@@ -48,3 +46,17 @@ Description: JSON manipulation library - documentation files
  strings back into the C representation of JSON objects.
  .
  The documentation for libjson-c is provided by this package.
+
+Package: libjson-c3-udeb
+Section: debian-installer
+Package-Type: udeb
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Description: JSON manipulation library - shared library (udeb)
+ This library allows you to easily construct JSON objects in C,
+ output them as JSON formatted strings and parse JSON formatted
+ strings back into the C representation of JSON objects.
+ .
+ This udeb package provides libjson-c3 for the Debian Installer.
