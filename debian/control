@@ -12,7 +12,7 @@ Section: libs
 Homepage: https://github.com/json-c/json-c/wiki
 Vcs-Git: git://anonscm.debian.org/git/collab-maint/json-c
 Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/json-c.git
-XS-Pexip-Upstream: http://ftp.debian.org/debian/ stretch
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ buster
 
 Package: libjson-c3
 Architecture: any
