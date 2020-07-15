@@ -1,3 +1,9 @@
+json-c (0.12.1+ds-2pexip2) pexip; urgency=medium
+
+  * Rebuild in buster environment
+
+ -- Steve McIntyre <steve.mcintyre@pexip.com>  Wed, 15 Jul 2020 22:52:08 +0000
+
 json-c (0.12.1+ds-2pexip1) pexip; urgency=medium
 
   * Migrate to Buster
