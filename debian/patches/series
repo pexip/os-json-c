@@ -3,3 +3,4 @@
 0001-CMakeLists-use-GNUInstallDirs.patch
 #608.patch
 0004-reproducible-build.patch
+0005-CVE-2021-32292.patch
