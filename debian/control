@@ -11,7 +11,7 @@ Homepage: https://github.com/json-c/json-c/wiki
 Vcs-Git: https://salsa.debian.org/debian/json-c.git
 Vcs-Browser: https://salsa.debian.org/debian/json-c
 Rules-Requires-Root: no
-XS-Pexip-Upstream: http://deb.debian.org/debian/ bullseye
+XS-Pexip-Upstream: http://deb.debian.org/debian/ bookworm
 
 Package: libjson-c5
 Architecture: any
