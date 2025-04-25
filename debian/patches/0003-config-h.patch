@@ -6,7 +6,7 @@ Forwarded: not-needed
 ---
 --- a/cmake/config.h.in
 +++ b/cmake/config.h.in
-@@ -180,7 +180,9 @@
+@@ -183,7 +183,9 @@
  #define PACKAGE_BUGREPORT "@JSON_C_BUGREPORT@"
  
  /* Define to the full name of this package. */
